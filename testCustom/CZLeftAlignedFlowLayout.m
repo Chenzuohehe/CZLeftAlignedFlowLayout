@@ -62,7 +62,7 @@
         if (indexPath.section == 0) {
             self.heightSum = (sectionInset.top + headViewSize.height);
         }else{
-            self.heightSum += (mininumLineSpace + sizeHeight + headViewSize.height + sectionInset.top);
+            self.heightSum += (sizeHeight + headViewSize.height + sectionInset.top + sectionInset.bottom);
         }
         currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);
         
@@ -78,7 +78,7 @@
         estimatedWidth = self.widthSum + mininumItemSpace + sizeWidth;
         if (estimatedWidth > SWIDTH) {
             //换行
-            self.heightSum += (self.minimumLineSpacing + sizeHeight);
+            self.heightSum += (mininumLineSpace + sizeHeight);
             self.widthSum = sectionInset.left + self.space;
             //（不是第一行 + 加上space）
             currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);

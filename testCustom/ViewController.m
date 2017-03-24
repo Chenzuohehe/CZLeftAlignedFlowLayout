@@ -46,9 +46,9 @@ static NSString * const reuseIdentifier = @"cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     if (indexPath.item == 0) {
-        cell.backgroundColor = [UIColor greenColor];
+        cell.backgroundColor = [UIColor whiteColor];
     } else {
-        cell.backgroundColor = [UIColor orangeColor];
+        cell.backgroundColor = [UIColor grayColor];
     }
     cell.textLabel.text = self.hotTagArr[indexPath.item];
     
@@ -97,14 +97,14 @@ static NSString * const reuseIdentifier = @"cell";
     if (kind == UICollectionElementKindSectionFooter){
         if (indexPath.section == 0 || indexPath.section == 2) {
             UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
-            footerview.backgroundColor = [UIColor purpleColor];
+            footerview.backgroundColor = [UIColor grayColor];
             for (UIView * view in footerview.subviews) {
                 [view removeFromSuperview];
             }
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [btn setTitle:@"Footer" forState:UIControlStateNormal];
-            [btn setBackgroundColor:[UIColor orangeColor]];
+            [btn setBackgroundColor:[UIColor blackColor]];
             btn.titleLabel.font = [UIFont systemFontOfSize:15];            btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 60, 40, 120, 35);
             [footerview addSubview:btn];
             reusableView = footerview;
@@ -115,7 +115,8 @@ static NSString * const reuseIdentifier = @"cell";
             [view removeFromSuperview];
         }
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40)];
-        label.backgroundColor = [UIColor yellowColor];
+        label.backgroundColor = [UIColor blackColor];
+        label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
         label.text = @"header";
         [headerview addSubview:label];
