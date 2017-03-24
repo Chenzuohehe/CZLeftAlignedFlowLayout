@@ -62,7 +62,7 @@
         if (indexPath.section == 0) {
             self.heightSum = (sectionInset.top + headViewSize.height);
         }else{
-            self.heightSum += (sizeHeight + headViewSize.height + sectionInset.top + sectionInset.bottom);
+            self.heightSum = self.contentHeight + headViewSize.height + sectionInset.top;
         }
         currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);
         
