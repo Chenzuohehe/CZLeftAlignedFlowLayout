@@ -12,7 +12,6 @@
 @interface CZLeftAlignedFlowLayout ()
 @property (retain, nonatomic) NSMutableArray *arrForItemAtrributes;
 @property (assign, nonatomic) CGFloat widthSum;
-@property (assign, nonatomic) CGFloat heightSum;
 @property (assign, nonatomic) CGFloat contentHeight;
 
 @end
@@ -60,39 +59,41 @@
             [self updateHeaderViewAttributesAtIndex:indexPath.section];
         }
         if (indexPath.section == 0) {
-            self.heightSum = (sectionInset.top + headViewSize.height);
+            self.contentHeight = (sectionInset.top + headViewSize.height);
         }else{
-            self.heightSum = self.contentHeight + headViewSize.height + sectionInset.top;
+            self.contentHeight += sizeHeight + sectionInset.top + mininumLineSpace;
         }
-        currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);
+        currentItemAttributes.frame = CGRectMake(self.widthSum, self.contentHeight, sizeWidth, sizeHeight);
         
         estimatedWidth = self.widthSum + mininumItemSpace + sizeWidth;
         self.widthSum = estimatedWidth;
         [self.arrForItemAtrributes addObject:currentItemAttributes];
         
-        self.contentHeight = self.heightSum + sizeHeight + sectionInset.bottom;
         if (isLastItemInSection) {
             [self updateFooterViewAttributesAtInIndex:indexPath.section];
+            self.contentHeight += sizeHeight + sectionInset.bottom;
         }
     }else{
         estimatedWidth = self.widthSum + mininumItemSpace + sizeWidth;
         if (estimatedWidth > SWIDTH) {
             //换行
-            self.heightSum += (mininumLineSpace + sizeHeight);
-            self.widthSum = sectionInset.left + self.space;
+            self.contentHeight += (mininumLineSpace + sizeHeight);
+            self.widthSum = mininumItemSpace + sectionInset.left + self.space;
             //（不是第一行 + 加上space）
-            currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);
+            currentItemAttributes.frame = CGRectMake(self.widthSum, self.contentHeight, sizeWidth, sizeHeight);
             self.widthSum += (sizeWidth + mininumItemSpace);
             [self.arrForItemAtrributes addObject:currentItemAttributes];
         }else{
             
-            currentItemAttributes.frame = CGRectMake(self.widthSum, self.heightSum, sizeWidth, sizeHeight);
+            currentItemAttributes.frame = CGRectMake(self.widthSum, self.contentHeight, sizeWidth, sizeHeight);
             [self.arrForItemAtrributes addObject:currentItemAttributes];
             self.widthSum = estimatedWidth;
         }
-        self.contentHeight = self.heightSum + sizeHeight + sectionInset.bottom;
+        
         if (isLastItemInSection) {
+            self.contentHeight = self.contentHeight + sizeHeight+ sectionInset.bottom;
             [self updateFooterViewAttributesAtInIndex:indexPath.section];
+            
         }
     }
 }
@@ -116,7 +117,6 @@
         footer.frame = frame;
         [self.arrForItemAtrributes addObject:footer];
         self.contentHeight += footerViewSize.height;
-        self.heightSum += footerViewSize.height;
     }
 }
 

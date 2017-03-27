@@ -22,13 +22,15 @@ static NSString * const reuseIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.hotTagArr = [[NSMutableArray alloc] initWithArray:@[@"颜色" ,@"黑", @"白", @"灰", @"棕", @"红", @"橙", @"黄", @"绿", @"青", @"蓝", @"紫", @"其他"]];
+    self.hotTagArr = [[NSMutableArray alloc] initWithArray:@[@"颜色" ,@"黑白", @"白", @"黑白灰", @"红棕", @"红", @"橙黄", @"黄绿", @"荧光绿", @"青", @"孔雀蓝", @"紫", @"其他"]];
     [self.mainCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView"];
     [self.mainCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
     
     CZLeftAlignedFlowLayout * layout = [[CZLeftAlignedFlowLayout alloc]init];
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    layout.space = 54;
+    layout.minimumInteritemSpacing = 10;
+    layout.minimumLineSpacing = 10;
+    layout.space = 44;
     
     self.mainCollectionView.collectionViewLayout = layout;
 }
