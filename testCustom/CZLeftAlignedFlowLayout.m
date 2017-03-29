@@ -57,11 +57,12 @@
         self.widthSum = sectionInset.left;//之前的
         if (hasHeaderView) {
             [self updateHeaderViewAttributesAtIndex:indexPath.section];
+            self.contentHeight += headViewSize.height;
         }
         if (indexPath.section == 0) {
             self.contentHeight = (sectionInset.top + headViewSize.height);
         }else{
-            self.contentHeight += sizeHeight + sectionInset.top + mininumLineSpace;
+            self.contentHeight += sectionInset.top;
         }
         currentItemAttributes.frame = CGRectMake(self.widthSum, self.contentHeight, sizeWidth, sizeHeight);
         
@@ -104,6 +105,7 @@
     frame.origin.y = self.contentHeight;
     header.frame = frame;
     [self.arrForItemAtrributes addObject:header];
+    
 }
 
 - (void)updateFooterViewAttributesAtInIndex:(NSInteger)section{
