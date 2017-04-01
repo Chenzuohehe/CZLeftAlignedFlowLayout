@@ -15,8 +15,8 @@
 		4E0A30411E815408003439D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0A303F1E815408003439D6 /* LaunchScreen.storyboard */; };
 		4E0A304C1E815408003439D6 /* testCustomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A304B1E815408003439D6 /* testCustomTests.m */; };
 		4E0A30571E815408003439D6 /* testCustomUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A30561E815408003439D6 /* testCustomUITests.m */; };
-		4E0A30691E8154FF003439D6 /* CZLeftAlignedFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A30671E8154FF003439D6 /* CZLeftAlignedFlowLayout.m */; };
 		4E0A306C1E8155E5003439D6 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A306B1E8155E5003439D6 /* CollectionViewCell.m */; };
+		4E58A6241E8FA51B00F4345F /* CZLeftAlignedFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58A6231E8FA51B00F4345F /* CZLeftAlignedFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		4E0A30521E815408003439D6 /* testCustomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testCustomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0A30561E815408003439D6 /* testCustomUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testCustomUITests.m; sourceTree = "<group>"; };
 		4E0A30581E815408003439D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E0A30661E8154FF003439D6 /* CZLeftAlignedFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZLeftAlignedFlowLayout.h; sourceTree = "<group>"; };
-		4E0A30671E8154FF003439D6 /* CZLeftAlignedFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZLeftAlignedFlowLayout.m; sourceTree = "<group>"; };
 		4E0A306A1E8155E5003439D6 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		4E0A306B1E8155E5003439D6 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		4E58A6221E8FA51B00F4345F /* CZLeftAlignedFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZLeftAlignedFlowLayout.h; sourceTree = "<group>"; };
+		4E58A6231E8FA51B00F4345F /* CZLeftAlignedFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZLeftAlignedFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,7 @@
 				4E0A30351E815408003439D6 /* AppDelegate.m */,
 				4E0A30371E815408003439D6 /* ViewController.h */,
 				4E0A30381E815408003439D6 /* ViewController.m */,
-				4E0A30661E8154FF003439D6 /* CZLeftAlignedFlowLayout.h */,
-				4E0A30671E8154FF003439D6 /* CZLeftAlignedFlowLayout.m */,
+				4E58A6211E8FA4F800F4345F /* CZLeftAlignedFlowLayout */,
 				4E0A306A1E8155E5003439D6 /* CollectionViewCell.h */,
 				4E0A306B1E8155E5003439D6 /* CollectionViewCell.m */,
 				4E0A303A1E815408003439D6 /* Main.storyboard */,
@@ -148,6 +147,15 @@
 				4E0A30581E815408003439D6 /* Info.plist */,
 			);
 			path = testCustomUITests;
+			sourceTree = "<group>";
+		};
+		4E58A6211E8FA4F800F4345F /* CZLeftAlignedFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4E58A6221E8FA51B00F4345F /* CZLeftAlignedFlowLayout.h */,
+				4E58A6231E8FA51B00F4345F /* CZLeftAlignedFlowLayout.m */,
+			);
+			path = CZLeftAlignedFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0A306C1E8155E5003439D6 /* CollectionViewCell.m in Sources */,
-				4E0A30691E8154FF003439D6 /* CZLeftAlignedFlowLayout.m in Sources */,
+				4E58A6241E8FA51B00F4345F /* CZLeftAlignedFlowLayout.m in Sources */,
 				4E0A30391E815408003439D6 /* ViewController.m in Sources */,
 				4E0A30361E815408003439D6 /* AppDelegate.m in Sources */,
 				4E0A30331E815408003439D6 /* main.m in Sources */,
